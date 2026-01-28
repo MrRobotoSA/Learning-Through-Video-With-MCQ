@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>naturalScienceNtechpg108</title>
+<link href="style.css" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<!--THIS IS THE START OF THE PAGE CONTENT-->
+<!-- This is the Background slow moving video -->
+<div class='section'>
+<video autoplay loop muted id="bgvid">
+<source src="bgvidchems.mp4">
+</video>
+</div>
+<!-- This is the title and creator of this code (Remove coments to insert title into thepage for user to see-->
+<!--
+<h1>Learning through video</h1>
+<h2>Created by: Roberto Catanho
+                0828285075
+                robertocatanho@gmail.com
+                AKA Robbie Catanho
+</h2>
+-->
+<!-- This is the main video --> 
+<div class="intrinsic-container intrinsic-container-16x9">
+    <p id="eduvid"><iframe src="https://www.youtube.com/embed/AJbe5THaNuU" allowfullscreen>
+    </iframe>
+</div> 
+<p id="demo2"></p>
+<div class="eduQ">
+<video id="vid" width="100%" height="300%" >
+        <source src="celebrate.mp4" type="video/mp4">
+        <source src="movie.ogg" type="video/ogg">
+        Your browser does not support the video tag.
+</video>
+<div class="celebrate">
+<form action=" ">
+<fieldset   class="area">
+    <legend>
+            <h2 id="demo">QuestionHeading</h2>
+            <p id="demo3">Malleability is the property of metal that means metal can be...<br></p>
+    </legend>
+<p id="demo1"></p>
+<span id="test">
+<p class="checkBox">
+<input type="checkbox" name="answerA" value="aa" id="aa">
+    <label for="aa"  class="area">used as a fuel - A</label>
+    </p>
+    <p class="checkBox">
+    <input type="checkbox" name="answerB" value="ab" id="ab">
+    <label for="ab"  class="area">bent and formed into a desired shape - B</label>
+    </p>
+    <p class="checkBox">
+    <input type="checkbox" name="answerC" value="ac" id="ac">
+    <label for="ac"  class="area">very light, weak and breaks easily - C</label>
+    </p>
+    <p class="checkBox">
+    <input type="checkbox" name="answerD" value="ad" id="ad">
+    <label for="ad"  class="area">transparent or colourless - D</label>
+    </p>
+
+<button onclick="myFunction1(), myFunction(), clickCount(), answerFound()" type="button">Submit</button>
+</span>
+</fieldset>
+<br>
+<br>
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1 style="color: aliceblue;">Scroll up, to see the question you need to answer.</h1>
+<br>
+<br>
+<!-- This shows the amount of times a user presses the submit button. 
+    This would show the amount of times a user gets a question wrong.
+    Frustration count on the part of the user with higher numbers can also be discovered -->
+<!--Start of the javascript below
+    for the multiple choice questions-->
+<script>
+/* the below variable tracks the amount of times a user clicks the submit button*/
+var click = 0;
+/* This variable below is to track if the answer is correctly displaying that the correct answer is clicked the first time.
+    it ensures that on the screen id#demo3 innerHTML does not trigger 
+    and display that a person got the answer on the 2nd try just because they clicked the submit button again after the correct answer has been found */
+var answerFirst = 0;
+/* the below function tracks the amount of times a user clicks the submit button 
+and displays the results on the screen*/
+function clickCount() { if ((document.getElementById("ab").checked === true || document.getElementById("ac").checked === true || document.getElementById("aa").checked === true || document.getElementById("ad").checked === true) || document.getElementById("ab").checked === false && document.getElementById("ac").checked === false && document.getElementById("aa").checked === false && document.getElementById("ad").checked === false) {
+    click = click - 1;
+        if (document.getElementById("ab").checked === true && document.getElementById("ac").checked === false && document.getElementById("aa").checked === false && document.getElementById("ad").checked === false) {
+        click += 1;
+    }
+}
+    click += 1;
+    document.getElementById("demo2").innerHTML = click;
+};
+/* The below functions displays whether the user has done the following
+if   answered correctly on the first try
+or  2nd try
+*/
+/* --------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+/////////////////////////////////////////////////////////////////////////////
+-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+        NOTE: YOU MUST FIX THIS FUNCTION answerFound() STATEMENT. THIS IS TO FIX THE OUTPUT WHEN YOU CHANGE THE ANSWERS TO B C AND D 
+        CHANGE THIS BELOW STATEMENT TO THE CORRECT ANSWER. ALSO SEE MORE TO CHANGE BELOW!!!!!!!!!!!!!!!!!!!!!!!!!
+-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+/////////////////////////////////////////////////////////////////////////////
+-----------------------------------------------------------------------------
+---------------------------------------------------------------------------*/
+/*THE BELOW FUNCTION DISPLAYS WHETHER THE USER HAS ANSWERED ON THEIR FIRST OR SECOND TIME, THIS SHOWS A GOOD PERFORMANCE BY THE USER*/
+function answerFound() {
+    if (((document.getElementById("ab").checked === true && document.getElementById("aa").checked === false && document.getElementById("ac").checked === false && document.getElementById("ad").checked === false)) && click<2) {
+    document.getElementById("demo3").innerHTML = "You got it correct on your first try!";
+    answerFirst = 1;
+}
+    else if (((document.getElementById("ab").checked === true && document.getElementById("aa").checked === false && document.getElementById("ac").checked === false && document.getElementById("ad").checked === false)) && click<3 && answerFirst !== 1) {
+    document.getElementById("demo3").innerHTML = "You got it on your 2nd try";
+}
+};
+/* The below functions displays whether the user has done one of the following things
+    - SHOWS THE OUTPUT IF CORRECT ANSWER IS CHOSSEN
+    - user has selected nothing
+    - if more than two options were selected */
+/* The following code is the main code, ensurring the correct answers and incorrect answers are triggered apropriately with each click */
+/* --------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+        NOTE THERE YOU MUST FIX THESE IF  BELOW STATEMENTS TO FIX THE OUTPUT WHEN YOU CHANGE THE ANSWERS TO B C AND D 
+        CHANGE THIS BELOW STATEMENT TO THE CORRECT ANSWER FOR THE ANSWER. ALSO ABOVE!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+-----------------------------------------------------------------------------
+---------------------------------------------------------------------------*/
+/* The below function choses the right answer */
+function myFunction() {
+    if (document.getElementById("ab").checked === true && document.getElementById("ac").checked === false && document.getElementById("aa").checked === false && document.getElementById("ad").checked === false) {
+        document.getElementById("demo").innerHTML = "<a id='correct' href=naturalScienceNtechpg108B.html target= '_blank' style='font-size:125%'>Thats Right, Well Done!! Click here to proceed</a>" ;
+        document.getElementById("demo1").innerHTML = "";
+        document.getElementById("test").style.display= 'none';
+        playVid();
+                        }
+    if (document.getElementById("ab").checked === false && document.getElementById("ac").checked === true && document.getElementById("aa").checked === false && document.getElementById("ad").checked === false) {
+        document.getElementById("demo").innerHTML = "Option 'C' is wrong";
+        document.getElementById("demo1").innerHTML = "" ;
+        click += 1;
+        document.getElementById("ac").checked = false; 
+                        }
+    if (document.getElementById("ab").checked === false && document.getElementById("ac").checked === false && document.getElementById("aa").checked === true && document.getElementById("ad").checked === false) {
+        document.getElementById("demo").innerHTML = "Option 'A' is Wrong";
+        document.getElementById("demo1").innerHTML = "" ;
+        click += 1;
+        document.getElementById("aa").checked = false; 
+                        }
+    if (document.getElementById("ab").checked === false && document.getElementById("ac").checked === false && document.getElementById("aa").checked === false && document.getElementById("ad").checked === true) {
+        document.getElementById("demo").innerHTML = "Option 'D' is Wrong";
+        document.getElementById("demo1").innerHTML = "" ;
+        click += 1;
+        document.getElementById("ad").checked = false;
+                        }
+}
+/* the below function shows if the user has selected nothing OR || too many things*/
+function myFunction1() {
+    if (document.getElementById("ab").checked === false && document.getElementById("ac").checked === false && document.getElementById("aa").checked === false && document.getElementById("ad").checked === false) {
+        document.getElementById("demo1").innerHTML = "Please make a selection" ;
+                    }
+    if (document.getElementById("ab").checked === true || document.getElementById("ac").checked === true || document.getElementById("aa").checked === true || document.getElementById("ad").checked === true) {
+        document.getElementById("demo1").innerHTML = "Try again. You have chosen too many options. You should unselect some options";
+                    }
+}
+/*THE BELOW CODE IS THE FUNCTION CREATED FOR the celebrate video to play when the correct answer is chosen, 
+SEE CODE ABOVE FOR WHERER THE playVid() function is called */
+var x = document.getElementById("vid");
+function playVid() {
+  x.play();
+}
+</script>
+</body>
+</html>

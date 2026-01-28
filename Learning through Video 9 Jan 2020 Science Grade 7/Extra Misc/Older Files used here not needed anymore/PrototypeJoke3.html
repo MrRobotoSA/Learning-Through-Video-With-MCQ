@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Prototype3</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<style>
+h1, h2, p {
+    text-align: center;
+    font-family: monospace;
+    font-family: cursive;
+    padding-bottom: 2%;
+    padding-top: 2%;
+}
+video#bgvid {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    background-size: cover;
+    z-index: -1;
+}
+p#eduvid {
+    text-align: center;
+    align-content: center;
+}
+form#eduform {
+    text-align: center;
+    align-content: center;
+}
+section#onething {
+    align-content: center;
+    text-align: center;
+    margin-bottom: 15%;
+    border-block: 2px solid thick;
+}
+div.eduQ {
+    background-color: rgb(230, 230, 230);
+    padding: 0%;
+    width: 50%;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    font-weight: bolder;
+    font-size: 115%;
+    font-family: sans-serif;
+    box-shadow: 5px 5px rgb(36, 36, 36);
+    padding: 1%;
+}
+fieldset {
+   width: 90%;
+   border: none;
+}
+fieldset.area {
+   margin-top: none;
+   
+}
+legend {
+font-weight: bold;
+padding-bottom: 0%;
+}
+div.eduQ {
+    background-image: url(80617.jpg);
+    padding: 0%;
+    width: 50%;
+    text-align: left;
+    margin-right: auto;
+    margin-left: auto;
+    font-weight: bolder;
+    font-size: 115%;
+    font-family: monospace, Arial, sans-serif;
+    box-shadow: 5px 5px rgba(88, 88, 88, 0.322);
+    padding: 1%;
+    font-family: cursive;
+}
+section.eduimg {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+h3 {
+    text-decoration: underline;
+}
+</style>
+<div class='section'>
+<video autoplay loop muted id="bgvid">
+<source src="bgvidchems.mp4">
+</video>
+</div>
+<h1>Learning through video</h1>
+<h2>Created by: Roberto Catanho</h2>
+<h1>Answer the following question (Level: Easy)</h1>
+<div class="eduQ">
+    <form action=" ">
+    <fieldset   class="area">
+    <legend>
+            <h3>Question 3</h3>
+            <p>How many elements are there?</p>
+    </legend>
+    <p class="checkBox">
+    <input type="checkbox" name="answerA" value="aa" id="aa">
+    <label for="aa"  class="area">A - 118 elements</label>
+    </p>
+    <p class="checkBox">
+    <input type="checkbox" name="answerB" value="ab" id="ab">
+    <label for="ab"  class="area">B - 218 elements/label>
+    </p>
+    <p class="checkBox">
+    <input type="checkbox" name="answerC" value="ac" id="ac">
+    <label for="ac"  class="area">C - 81 elements</label>
+    </p>
+    <p class="checkBox">
+    <input type="checkbox" name="answerD" value="ad" id="ad">
+    <label for="ad"  class="area">D - 61 elements</label>
+    </p>
+    </fieldset>
+    <button onclick="myFunction1(), myFunction(), clickCount(), answerFound()" type="button">Submit</button>
+<h2 id="demo"></h2>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<script>
+    var click = 0;
+    function clickCount() {
+        click += 1;
+        document.getElementById("demo2").innerHTML = click;
+    };
+    function answerFound() {
+        if (((document.getElementById("aa").checked === true && document.getElementById("ac").checked === false && document.getElementById("ab").checked === false && document.getElementById("ad").checked === false)) && click<2) {
+        document.getElementById("demo3").innerHTML = "Well done , you got it correct on your first try!";
+    }
+        else if (((document.getElementById("aa").checked === true && document.getElementById("ac").checked === false && document.getElementById("ab").checked === false && document.getElementById("ad").checked === false)) && click<3) {
+        document.getElementById("demo3").innerHTML = "You got it on your 2nd try, well done.";
+    }
+    };
+function myFunction1() {
+    if (document.getElementById("ac").checked === false && document.getElementById("aa").checked === false && document.getElementById("ab").checked === false && document.getElementById("ad").checked === false) {
+        document.getElementById("demo1").innerHTML = "Please make a selection" ;
+                    }
+    if (document.getElementById("ac").checked === true || document.getElementById("aa").checked === true || document.getElementById("ab").checked === true || document.getElementById("ad").checked === true) {
+        document.getElementById("demo1").innerHTML = "Please deselect options and try again" ;
+        document.getElementById("demo").innerHTML = "You have chosen too many options" ;
+                    }
+}
+function myFunction() {
+    if (document.getElementById("aa").checked === true && document.getElementById("ac").checked === false && document.getElementById("ab").checked === false && document.getElementById("ad").checked === false) {
+                        document.getElementById("demo").innerHTML = "<a href=PrototypeJoke4.html target= 'blank' > Thats Right, Well Done!! Click to proceed</a>" ;
+                        document.getElementById("demo1").innerHTML = "Click the words above to move to the next page";
+                        }
+    if (document.getElementById("aa").checked === false && document.getElementById("ac").checked === true && document.getElementById("ab").checked === false && document.getElementById("ad").checked === false) {
+                        document.getElementById("demo").innerHTML = "Option 'C' is Wrong, Try Again";
+                        document.getElementById("demo1").innerHTML = "Deselect your option and try again"; 
+                        }
+    if (document.getElementById("ac").checked === false && document.getElementById("aa").checked === false && document.getElementById("ab").checked === true && document.getElementById("ad").checked === false) {
+                        document.getElementById("demo").innerHTML = "Option 'B' is Wrong, Try Again";
+                        document.getElementById("demo1").innerHTML = "Deselect your option and try again"; 
+                        }
+    if (document.getElementById("ac").checked === false && document.getElementById("aa").checked === false && document.getElementById("ab").checked === false && document.getElementById("ad").checked === true) {
+                        document.getElementById("demo").innerHTML = "Option 'D' is Wrong";
+                        document.getElementById("demo1").innerHTML = "Deselect your option and try again";
+                        }
+}
+
+</script>
+
+</body>
+</html>
+

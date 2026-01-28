@@ -1,0 +1,17 @@
+Paste this (safe starter for your project):
+
+# Video files
+*.mp4
+*.mkv
+*.avi
+*.mov
+*.webm
+
+# Node / build junk (if applicable)
+node_modules/
+dist/
+build/
+
+# OS junk
+.DS_Store
+Thumbs.db

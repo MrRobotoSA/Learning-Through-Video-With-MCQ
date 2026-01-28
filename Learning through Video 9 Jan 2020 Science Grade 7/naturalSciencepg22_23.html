@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>naturalSciencepg22_23</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<style>
+h1, h2, p {
+    text-align: center;
+    font-family: monospace;
+    font-family: cursive;
+    padding-bottom: 0%;
+    padding-top: 0%;
+}
+video#bgvid {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    background-size: cover;
+    z-index: -1;
+}
+p#eduvid {
+    text-align: center;
+    align-content: center;
+}
+form#eduform {
+    text-align: center;
+    align-content: center;
+}
+/* This styles the MAIN VIDEO*/
+section#onething {
+    align-content: center;
+    text-align: center;
+    margin-bottom: 4%;
+    margin-top: 0%;
+    border-block: 2px solid thick;
+}
+fieldset {
+   width: 90%;
+   border: none;
+}
+fieldset.area {
+   margin-top: none;
+}
+legend {
+font-weight: bold;
+padding-bottom: 0%;
+}
+div.eduQ {
+    background-image: url(80617.jpg);
+    padding: 0%;
+    width: 50%;
+    text-align: left;
+    margin-right: auto;
+    margin-left: auto;
+    font-weight: bolder;
+    font-size: 125%;
+    font-family: monospace, Arial, sans-serif;
+    box-shadow: 5px 5px rgba(88, 88, 88, 0.322);
+    padding: 0%;
+    font-family: cursive;
+}
+section.eduimg {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+h3 {
+    text-decoration: underline;
+}
+/* THE BELOW 3 CSS STYLE RULES WERE WRITTEN TO CONTROL THE MAIN VIDEO IFRAME AND MAKE IT RESPONSIVE */
+.intrinsic-container {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+}
+
+/* 16x9 Aspect Ratio */
+.intrinsic-container-16x9 {
+  padding-bottom: 56.25%;
+}
+
+/* 4x3 Aspect Ratio */
+.intrinsic-container-4x3 {
+  padding-bottom: 75%;
+}
+
+.intrinsic-container iframe {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 80%;
+}
+label:hover {
+  background-color: rgb(226, 226, 226);
+  border: 2 solid black;
+  padding: 1%;
+}
+</style>
+<!--THIS IS THE START OF THE PAGE CONTENT-->
+<!-- This is the Background slow moving video -->
+<div class='section'>
+<video autoplay loop muted id="bgvid">
+<source src="bgvidchems.mp4">
+</video>
+</div>
+<!-- This is the title and creator of this code (Remove coments to insert title into thepage for user to see-->
+<!--
+<h1>Learning through video</h1>
+<h2>Created by: Roberto Catanho
+                0828285075
+                robertocatanho@gmail.com
+                AKA Robbie Catanho
+</h2>
+-->
+<!-- This is the main video --> 
+<div class="intrinsic-container intrinsic-container-16x9">
+    <p id="eduvid"><iframe src="https://www.youtube.com/embed/PMenuLJmV0I" allowfullscreen>
+    </iframe>
+</div> 
+<div class="eduQ">
+    <form action=" ">
+    <fieldset   class="area">
+    <legend>
+            <h3>Questions based on pg22</h3>
+            <p>Which 2 gasses make up 99% of air<br>
+            in the atmosphere ?</p>
+    </legend>
+<h2 id="demo"></h2>
+<p id="demo3"></p>
+<p id="demo1"></p>
+    <p class="checkBox">
+    <input type="checkbox" name="answerA" value="aa" id="aa">
+    <label for="aa"  class="area">A - Oxygen</label>
+    </p>
+    <p class="checkBox">
+    <input type="checkbox" name="answerB" value="ab" id="ab">
+    <label for="ab"  class="area">B - Helium</label>
+    </p>
+    <p class="checkBox">
+    <input type="checkbox" name="answerC" value="ac" id="ac">
+    <label for="ac"  class="area">C - Argon and Carbon Dioxide</label>
+    </p>
+    <p class="checkBox">
+    <input type="checkbox" name="answerD" value="ad" id="ad">
+    <label for="ad"  class="area">D - Nitrogen and Oxygen</label>
+    </p>
+    </fieldset>
+    <button onclick="myFunction1(), myFunction(), clickCount(), answerFound()" type="button">Submit</button>
+</div>
+<h1>Please watch the whole video then<br>
+    Answer the question seen above.</h1>
+<!-- This shows the amount of times a user presses the submit button. 
+    This would show the amount of times a user gets a question wrong.
+    Frustration count on the part of the user with higher numbers can also be discovered -->
+<p id="demo2"></p>
+<!--Start of the javascript for the multiple choice questions-->
+<script>
+    var click = 0;
+/* This variable below is to track if the answer was correct the first time, it ensures that on the screen id#demo3 innerHTML does not trigger 
+and display that a person got the answer on the 2nd try just because they clicked the submit button again after the correct answer has been found */
+    var answerFirst = 0;
+    function clickCount() {
+        click += 1;
+        document.getElementById("demo2").innerHTML = click;
+    };
+    function answerFound() {
+        if (((document.getElementById("ad").checked === true && document.getElementById("ac").checked === false && document.getElementById("aa").checked === false && document.getElementById("ab").checked === false)) && click<2) {
+        document.getElementById("demo3").innerHTML = "You got it correct on your first try!";
+        answerFirst = 1;
+    }
+        else if (((document.getElementById("ad").checked === true && document.getElementById("ac").checked === false && document.getElementById("aa").checked === false && document.getElementById("ab").checked === false)) && click<3 && answerFirst !== 1) {
+        document.getElementById("demo3").innerHTML = "You got it on your 2nd try";
+    }
+    };
+function myFunction1() {
+    if (document.getElementById("ad").checked === false && document.getElementById("ac").checked === false && document.getElementById("aa").checked === false && document.getElementById("ab").checked === false) {
+        document.getElementById("demo1").innerHTML = "Please make a selection" ;
+                    }
+    if (document.getElementById("ad").checked === true || document.getElementById("ac").checked === true || document.getElementById("aa").checked === true || document.getElementById("ab").checked === true) {
+        document.getElementById("demo1").innerHTML = "Please deselect options, and try again" ;
+        document.getElementById("demo").innerHTML = "You have chosen too many options" ;
+                    }
+}
+function myFunction() {
+    if (document.getElementById("ad").checked === true && document.getElementById("ac").checked === false && document.getElementById("aa").checked === false && document.getElementById("ab").checked === false) {
+        document.getElementById("demo").innerHTML = "<a href=naturalSciencepg24_27.html target= '_blank' style='font-size:175%' >Thats Right, Well Done!! Click here to proceed</a>" ;
+        document.getElementById("demo1").innerHTML = "Click the words above to move to the next page";
+                        }
+    if (document.getElementById("ad").checked === false && document.getElementById("ac").checked === true && document.getElementById("aa").checked === false && document.getElementById("ab").checked === false) {
+        document.getElementById("demo").innerHTML = "Option 'C' is Wrong, Try Again";
+        document.getElementById("demo1").innerHTML = "" ;
+        document.getElementById("ac").checked = false; 
+                        }
+    if (document.getElementById("ad").checked === false && document.getElementById("ac").checked === false && document.getElementById("aa").checked === true && document.getElementById("ab").checked === false) {
+        document.getElementById("demo").innerHTML = "Option 'A' is Wrong, Try Again";
+        document.getElementById("demo1").innerHTML = "" ;
+        document.getElementById("aa").checked = false; 
+                        }
+    if (document.getElementById("ad").checked === false && document.getElementById("ac").checked === false && document.getElementById("aa").checked === false && document.getElementById("ab").checked === true) {
+        document.getElementById("demo").innerHTML = "Option 'B' is Wrong, Try Again";
+        document.getElementById("demo1").innerHTML = "" ;
+        document.getElementById("ab").checked = false;
+                        }
+}
+</script>
+
+</body>
+</html>
+

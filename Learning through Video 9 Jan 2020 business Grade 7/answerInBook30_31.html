@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>answerInBook30_31</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<style>
+h1, h2, p {
+    text-align: center;
+    font-family: monospace;
+    font-family: cursive;
+    padding-bottom: 0%;
+    padding-top: 0%;
+}
+h1 {
+        color: antiquewhite;
+    }
+video#bgvid {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    background-size: cover;
+    z-index: -1;
+}
+p#eduvid {
+    text-align: center;
+    align-content: center;
+}
+form#eduform {
+    text-align: center;
+    align-content: center;
+}
+/* This styles the MAIN VIDEO*/
+section#onething {
+    align-content: center;
+    text-align: center;
+    margin-bottom: 4%;
+    margin-top: 0%;
+    border-block: 2px solid thick;
+}
+fieldset {
+   width: 90%;
+   border: none;
+}
+fieldset.area {
+   margin-top: none;
+}
+legend {
+font-weight: bold;
+padding-bottom: 0%;
+}
+div.eduQ {
+    background-image: url(80617.jpg);
+    padding: 0%;
+    width: 50%;
+    text-align: left;
+    margin-right: auto;
+    margin-left: auto;
+    font-weight: bolder;
+    font-size: 125%;
+    font-family: monospace, Arial, sans-serif;
+    box-shadow: 5px 5px rgba(88, 88, 88, 0.322);
+    padding: 0%;
+    font-family: cursive;
+}
+section.eduimg {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+h3 {
+    text-decoration: underline;
+}
+/* THE BELOW 3 CSS STYLE RULES WERE WRITTEN TO CONTROL THE MAIN VIDEO IFRAME AND MAKE IT RESPONSIVE */
+.intrinsic-container {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+}
+
+/* 16x9 Aspect Ratio */
+.intrinsic-container-16x9 {
+  padding-bottom: 56.25%;
+}
+
+/* 4x3 Aspect Ratio */
+.intrinsic-container-4x3 {
+  padding-bottom: 75%;
+}
+
+.intrinsic-container iframe {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 80%;
+}
+label:hover {
+  background-color: rgb(226, 226, 226);
+  border: 2 solid black;
+  padding: 1%;
+}
+</style>
+<!--THIS IS THE START OF THE PAGE CONTENT-->
+<!-- This is the Background slow moving video -->
+<div class='section'>
+<video autoplay loop muted id="bgvid">
+<source src="bgvidchems.mp4">
+</video>
+</div>
+<!-- This is the title and creator of this code (Remove coments to insert title into thepage for user to see-->
+<!--
+<h1>Learning through video</h1>
+<h2>Created by: Roberto Catanho
+                0828285075
+                robertocatanho@gmail.com
+                AKA Robbie Catanho
+</h2>
+-->
+<!-- This is the main video --> 
+<div class="eduQ">
+    <form action=" ">
+    <fieldset   class="area">
+    <legend>
+            <h3>Page 30-31</h3>
+            <p>Read all of the information on page 30 and page 31<br>
+            When you are done tick all these boxes and move on</p>
+    </legend>
+<h2 id="demo"></h2>
+<p id="demo3"></p>
+<p id="demo1"></p>
+    <p class="checkBox">
+    <input type="checkbox" name="answerA" value="aa" id="aa">
+    <label for="aa"  class="area">I read about animals, plants and how they use the lithosphere / geosphere</label>
+    </p>
+    <p class="checkBox">
+    <input type="checkbox" name="answerB" value="ab" id="ab">
+    <label for="ab"  class="area">I read about animals, plants and how they use the hydrosphere</label>
+    </p>
+    <p class="checkBox">
+    <input type="checkbox" name="answerC" value="ac" id="ac">
+    <label for="ac"  class="area">I read about animals, plants and how they use the atosphere</label>
+    </p>
+    <p class="checkBox">
+    <input type="checkbox" name="answerD" value="ad" id="ad">
+    <label for="ad"  class="area">I read all pages from page 30-31</label>
+    </p>
+    </fieldset>
+    <button onclick="myFunction()" type="button">Submit</button>
+</div>
+<h1>Please follow the instructions, tick all the boxes then<br>
+    click the submit button to move on</h1>
+<!-- This shows the amount of times a user presses the submit button. 
+    This would show the amount of times a user gets a question wrong.
+    Frustration count on the part of the user with higher numbers can also be discovered -->
+<p id="demo2"></p>
+<!--Start of the javascript below
+    for the multiple choice questions-->
+<script>
+/* The following code is the main code, ensurring the correct answers and incorrect answers are triggered apropriately with each click */
+function myFunction() {
+    if (document.getElementById("aa").checked === true && document.getElementById("ac").checked === true && document.getElementById("ab").checked === true && document.getElementById("ad").checked === true) {
+        document.getElementById("demo").innerHTML = "<a href=answerInBook32_34.html target= '_blank' style='font-size:175%' >Well Done!! Click here to proceed</a>" ;
+        document.getElementById("demo1").innerHTML = "Click the words above to move to the next page";
+                        }
+
+}
+</script>
+
+</body>
+</html>
